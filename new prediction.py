@@ -21,16 +21,16 @@ urls = [
 
 ]
 
-# Extract features for each URL
+# Extracting features for each URL
 feature_list = [extract_features(url) for url in urls]
 
-# Convert list of dicts to DataFrame
+# Converting list of dicts to DataFrame
 new_X = pd.DataFrame(feature_list)
 
-# Load your trained model
+# Loading trained model
 model = joblib.load('Trained_model.pkl')
 
-# Predict
+# Prediction
 predictions = model.predict(new_X)
 
 for url, pred in zip(urls, predictions):
