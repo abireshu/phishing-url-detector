@@ -1,6 +1,4 @@
-[Running] python -u "c:\Users\abire\OneDrive\Desktop\abi\phishing detection ML\model.py"
-c:\Users\abire\OneDrive\Desktop\abi\phishing detection ML\model.py:8: SyntaxWarning: invalid escape sequence '\D'
-  data = pd.read_csv('Datasets\Dataset.csv')
+
 URLLength                     0
 NoOfSubDomain                 0
 IsDomainIP                    0
