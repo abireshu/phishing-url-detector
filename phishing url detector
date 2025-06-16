@@ -4,10 +4,10 @@ import joblib
 import pandas as pd
 from feature_extraction import extract_features
 
-# Load the trained model
-model = joblib.load('Trained_model.pkl')
 
-# Main app window
+model = joblib.load('Trained_model.pkl') #loading the dataset
+
+
 root = tk.Tk()
 root.title("🔐 Phishing URL Detector")
 root.geometry("550x350")
@@ -17,14 +17,14 @@ import threading
 import time
 
 def animate_result(text, color):
-    result_label.config(text="")  # Clear previous text
+    result_label.config(text="")  
     for char in text:
         result_label.config(text=result_label.cget("text") + char, fg=color)
         root.update()
-        time.sleep(0.03)  # delay for animation effect
+        time.sleep(0.03)  
 
 
-# Function to predict
+
 def predict_url():
     url = url_entry.get().strip()
     if not url:
@@ -50,7 +50,6 @@ def style_button(button):
         relief="flat", padx=10, pady=5, bd=0, activebackground="#45a049", cursor="hand2"
     )
 
-# GUI elements
 title = tk.Label(root, text="Phishing URL Detection Tool", bg="#1e1e2f", fg="#ffffff",
                  font=("Segoe UI", 20, "bold"))
 title.pack(pady=(30, 10))
@@ -69,5 +68,5 @@ predict_btn.pack(pady=20)
 result_label = tk.Label(root, text="", bg="#1e1e2f", font=("Segoe UI", 14, "bold"))
 result_label.pack()
 
-# Run the GUI
+
 root.mainloop()
